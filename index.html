@@ -175,15 +175,20 @@ body{
 .btn.pri{background:var(--ciano); border-color:var(--ciano); color:var(--ciano-ink); font-weight:700}
 .btn.dir{margin-left:auto}
 
-/* ---------- janela de escolha enxuta e recolhida ---------- */
+/* ---------- janela de escolha enxuta, sem moldura ---------- */
 /* O hover aqui e de verdade: e o mesmo comportamento do programa, entao a
-   pagina demonstra em vez de descrever. */
-#slim{left:440px; top:186px; width:400px}
-.slim-body{
-  padding:12px 16px; max-height:76px; overflow:hidden;
-  transition:max-height .3s ease;
+   pagina demonstra em vez de descrever. Em repouso ficam so as linhas — o
+   fundo, a barra de titulo e o rodape aparecem quando o ponteiro chega. */
+#slim{left:440px; top:170px; width:400px}
+.slim-body{padding:12px 16px}
+.fantasma{background:transparent; border-color:transparent; box-shadow:none}
+.fantasma .titlebar, .fantasma .slim-foot{opacity:0; transition:opacity .2s ease}
+.fantasma:hover{
+  background:var(--app-bg); border-color:rgba(34,211,238,.34);
+  box-shadow:0 24px 60px rgba(0,0,0,.62);
 }
-#slim:hover .slim-body{max-height:420px}
+.fantasma:hover .titlebar, .fantasma:hover .slim-foot{opacity:1}
+.slim-foot{display:flex; gap:8px; padding:0 16px 12px}
 .slim-row{
   height:64px; margin-bottom:4px; padding:0 18px;
   border:1px solid var(--app-line); background:var(--app-panel);
@@ -522,7 +527,7 @@ body{
       </section>
 
       <!-- ============ janela de escolha enxuta ============ -->
-      <section class="win firawwin" id="slim" aria-label="Abrir link com — modo enxuto">
+      <section class="win firawwin fantasma" id="slim" aria-label="Abrir link com — modo enxuto">
         <div class="titlebar">
           <svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#22d3ee"/><path d="M9 16L23.4 8.6M9 16l14.4 7.4" stroke="#091018" stroke-width="2.6" stroke-linecap="round"/><circle cx="9" cy="16" r="3.7" fill="#091018"/><circle cx="23.4" cy="8.6" r="2.7" fill="#091018"/><circle cx="23.4" cy="23.4" r="2.7" fill="#091018"/></svg>
           <h3>Abrir link com</h3>
@@ -550,7 +555,10 @@ body{
             <b>Microsoft Edge</b><i class="key">5</i>
           </div>
         </div>
-        <div class="dica-hover">recolhida: só a primeira linha — passe o mouse para abrir</div>
+        <div class="slim-foot">
+          <div class="btn">Configurações</div>
+          <div class="btn">Modo completo</div>
+        </div>
       </section>
 
       <!-- ============ Studio ============ -->
@@ -815,8 +823,8 @@ body{
       at: ["#perfis", 8]
     },
     {
-      t: "Enxuta — e recolhida, se você quiser",
-      d: "Só o ícone (maior), o nome e o número. Com <code>Começar recolhida</code>, a janela nasce do tamanho de <b>uma linha</b> e abre quando o mouse chega — <b>passe o mouse na janela ao lado</b>. O teclado continua fazendo tudo.",
+      t: "Enxuta — e sem moldura, se você quiser",
+      d: "Só o ícone (maior), o nome e o número. Com <code>Sem moldura</code>, os navegadores ficam <b>flutuando</b> sobre o que estiver atrás: some o fundo, a barra de título e os botões. Tudo volta — junto com <code>Configurações</code> e <code>Modo completo</code> — quando o ponteiro chega. <b>Passe o mouse na janela ao lado.</b>",
       call: "Passe o mouse aqui",
       at: ["#slim", 8]
     }
