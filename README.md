@@ -1,6 +1,8 @@
 # FirawSelector — mock guiado
 
-Simulação de um desktop Windows 11 que percorre, em oito passos, o caminho inteiro do [FirawSelector](https://github.com/firawynix/firaw-selector): instalar, virar o navegador padrão, receber um link, escolher na hora, lembrar por site, criar regra e mandar o link para o perfil certo do Chrome.
+Simulação de um desktop Windows 11 que percorre, em nove passos, o caminho inteiro do [FirawSelector](https://github.com/firawynix/firaw-selector): instalar, virar o navegador padrão, receber um link, escolher na hora, lembrar por site, criar regra, mandar o link para o perfil certo do Chrome e recolher a janela numa linha só.
+
+O passo 9 **não descreve, demonstra**: a janela enxuta ali é recolhida de verdade e abre no `:hover`, igual ao programa.
 
 Espelha o mock do [FolderPin](https://folderpin.firawynix.com.br) — mesmo palco, mesmo painel-guia, mesma navegação.
 

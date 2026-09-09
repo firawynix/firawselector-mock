@@ -175,6 +175,31 @@ body{
 .btn.pri{background:var(--ciano); border-color:var(--ciano); color:var(--ciano-ink); font-weight:700}
 .btn.dir{margin-left:auto}
 
+/* ---------- janela de escolha enxuta e recolhida ---------- */
+/* O hover aqui e de verdade: e o mesmo comportamento do programa, entao a
+   pagina demonstra em vez de descrever. */
+#slim{left:440px; top:186px; width:400px}
+.slim-body{
+  padding:12px 16px; max-height:76px; overflow:hidden;
+  transition:max-height .3s ease;
+}
+#slim:hover .slim-body{max-height:420px}
+.slim-row{
+  height:64px; margin-bottom:4px; padding:0 18px;
+  border:1px solid var(--app-line); background:var(--app-panel);
+  display:flex; align-items:center; gap:18px; position:relative;
+}
+.slim-row.def::before{content:""; position:absolute; left:0; top:1px; bottom:1px; width:3px; background:var(--ciano)}
+.slim-row b{font-size:15px; font-weight:600}
+.slim-row .key{
+  margin-left:auto; width:28px; height:28px; border:1px solid var(--app-line);
+  background:var(--app-field); display:grid; place-items:center;
+  font-family:var(--mono); font-size:12px; color:var(--ink-2);
+}
+#slim .dica-hover{
+  padding:0 16px 10px; font-size:11px; color:var(--ink-3);
+}
+
 /* ---------- Studio ---------- */
 #studio{left:196px; top:96px; width:900px}
 .st-body{display:grid; grid-template-columns:180px 1fr; height:452px}
@@ -496,6 +521,38 @@ body{
         </div>
       </section>
 
+      <!-- ============ janela de escolha enxuta ============ -->
+      <section class="win firawwin" id="slim" aria-label="Abrir link com — modo enxuto">
+        <div class="titlebar">
+          <svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#22d3ee"/><path d="M9 16L23.4 8.6M9 16l14.4 7.4" stroke="#091018" stroke-width="2.6" stroke-linecap="round"/><circle cx="9" cy="16" r="3.7" fill="#091018"/><circle cx="23.4" cy="8.6" r="2.7" fill="#091018"/><circle cx="23.4" cy="23.4" r="2.7" fill="#091018"/></svg>
+          <h3>Abrir link com</h3>
+          <div class="wbtns"><div class="wbtn">&#8212;</div><div class="wbtn x">&#10005;</div></div>
+        </div>
+        <div class="slim-body">
+          <div class="slim-row">
+            <svg width="40" height="40" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="#ff1b2d" stroke-width="3.4"/><ellipse cx="16" cy="16" rx="6" ry="12" fill="none" stroke="#ff1b2d" stroke-width="3.4"/></svg>
+            <b>Opera GX Stable</b><i class="key">1</i>
+          </div>
+          <div class="slim-row">
+            <svg width="40" height="40" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="#1e6fd9"/><circle cx="16" cy="16" r="6" fill="#fff"/><circle cx="16" cy="16" r="2.6" fill="#1e6fd9"/></svg>
+            <b>Citrix Enterprise Browser</b><i class="key">2</i>
+          </div>
+          <div class="slim-row def">
+            <svg width="40" height="40" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#e8e8e8"/><circle cx="16" cy="16" r="6.5" fill="#4285f4"/><path d="M16 2a14 14 0 0112.1 7H16z" fill="#ea4335"/><path d="M28.1 9A14 14 0 0116 30l6-11z" fill="#fbbc05"/><path d="M16 30A14 14 0 013.9 9L10 20z" fill="#34a853"/></svg>
+            <b>Google Chrome</b><i class="key">3</i>
+          </div>
+          <div class="slim-row">
+            <svg width="40" height="40" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#1ba1e2"/><path d="M9 22c4 3 12 2 14-4-4 3-10 2-11-3-1 3 0 6-3 7z" fill="#fff"/></svg>
+            <b>Internet Explorer</b><i class="key">4</i>
+          </div>
+          <div class="slim-row">
+            <svg width="40" height="40" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#0a84c8"/><path d="M6 12a12 12 0 0122 2c-6-4-16-2-16 6 0 3 2 6 5 8C9 27 5 20 6 12z" fill="#fff" opacity=".92"/></svg>
+            <b>Microsoft Edge</b><i class="key">5</i>
+          </div>
+        </div>
+        <div class="dica-hover">recolhida: só a primeira linha — passe o mouse para abrir</div>
+      </section>
+
       <!-- ============ Studio ============ -->
       <section class="win firawwin" id="studio" aria-label="FirawSelector Studio">
         <div class="titlebar">
@@ -613,7 +670,7 @@ body{
         </svg>
         <h1>FirawSelector</h1>
       </div>
-      <p class="tagline">Cada link no navegador certo — por regra, ou perguntando na hora. Percorra os oito passos: o desktop ao lado responde a cada um.</p>
+      <p class="tagline">Cada link no navegador certo — por regra, ou perguntando na hora. Percorra os nove passos: o desktop ao lado responde a cada um.</p>
     </div>
 
     <div class="steps" id="steps"></div>
@@ -621,7 +678,7 @@ body{
     <div class="coach-foot">
       <button class="nav" id="prev">Voltar</button>
       <button class="nav pri" id="next">Avançar</button>
-      <span class="counter" id="counter">1 / 8</span>
+      <span class="counter" id="counter">1 / 9</span>
     </div>
   </aside>
 
@@ -756,6 +813,12 @@ body{
       call: "Chrome Trabalho ≠ Chrome Pessoal",
       pos: "abaixo",
       at: ["#perfis", 8]
+    },
+    {
+      t: "Enxuta — e recolhida, se você quiser",
+      d: "Só o ícone (maior), o nome e o número. Com <code>Começar recolhida</code>, a janela nasce do tamanho de <b>uma linha</b> e abre quando o mouse chega — <b>passe o mouse na janela ao lado</b>. O teclado continua fazendo tudo.",
+      call: "Passe o mouse aqui",
+      at: ["#slim", 8]
     }
   ];
 
@@ -770,6 +833,7 @@ body{
     cls($("chat"), "on", s >= 2 && s <= 6);
     cls($("pick"), "on", s === 3 || s === 4);
     cls($("studio"), "on", s === 5 || s === 7);
+    cls($("slim"), "on", s === 8);
 
     // Studio: aba conforme o passo
     var naPagNav = s === 7;
@@ -786,7 +850,7 @@ body{
     cls($("tb-chat"), "run", s >= 2);
     cls($("tb-chat"), "active", s === 2);
     cls($("tb-firaw"), "run", s >= 0);
-    cls($("tb-firaw"), "active", s === 3 || s === 4 || s === 5 || s === 7);
+    cls($("tb-firaw"), "active", s === 3 || s === 4 || s === 5 || s === 7 || s === 8);
     cls($("tb-edge"), "run", s >= 6);
     cls($("tb-edge"), "active", s === 6);
 
