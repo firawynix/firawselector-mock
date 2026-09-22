@@ -345,6 +345,8 @@ body{
 .dock a:hover{background:rgba(255,255,255,.06)}
 .dock a.pri{background:var(--ciano); border-color:var(--ciano); color:var(--ciano-ink)}
 .dock a.pri:hover{background:#67e8f9}
+.dock a.store{background:#111; border-color:#555; color:#fff}
+.dock a.store:hover{background:#242424}
 .dock .sub{display:block; font-family:var(--mono); font-size:11px; color:var(--ink-3); margin-top:2px}
 
 /* O apoiar e o unico elemento que se mexe sozinho, e de proposito. O brilho
@@ -693,12 +695,16 @@ body{
   <footer class="dock">
     <div class="meta">
       <b>Windows 10/11 e Linux x86_64 · sem administrador</b>
-      <span class="sub">instala em %LOCALAPPDATA%\FirawSelector · binários não assinados: o SmartScreen avisa na 1ª vez</span>
+      <span class="sub">instala em %LOCALAPPDATA%\FirawSelector · instalador assinado</span>
     </div>
     <div class="links">
-      <a class="pri" href="https://github.com/firawynix/firaw-selector/releases/latest/download/FirawSelector-Setup.exe">
+      <a class="pri" href="https://jogos.firawynix.com.br/api/games/firawselector/windows/arquivo">
         <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5M2 13h12" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Baixar instalador
+      </a>
+      <a class="store" href="https://apps.microsoft.com/detail/9N8MV05X1NVP" target="_blank" rel="noopener noreferrer" aria-label="Baixar FirawSelector na Microsoft Store">
+        <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 7h15v10h-15zM6.5 7V5a3.5 3.5 0 0 1 7 0v2" fill="none" stroke="white" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 10h3v3H6z" fill="#f25022"/><path d="M10 10h3v3h-3z" fill="#7fba00"/><path d="M6 14h3v3H6z" fill="#00a4ef"/><path d="M10 14h3v3h-3z" fill="#ffb900"/></svg>
+        Microsoft Store
       </a>
       <a href="https://jogos.firawynix.com.br/api/games/firawselector/linux/arquivo">Baixar AppImage Linux</a>
       <a href="https://github.com/firawynix/firaw-selector">
