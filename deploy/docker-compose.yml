@@ -3,6 +3,7 @@
 # unica em firawynix.com.br/apoie, que ja concentra os apoios de todos os sites.
 services:
   site:
+    mem_limit: 128m   # teto por capacidade (02/10/2026; docs/guias/LIMITES-E-SAUDE.md)
     image: nginx:alpine
     container_name: firawselector-mock
     restart: unless-stopped
